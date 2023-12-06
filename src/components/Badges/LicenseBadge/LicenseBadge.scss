@@ -1,0 +1,37 @@
+@import '../../../assets/styles/mixins.scss';
+
+.license-badge {
+  span {
+    @include regular-font;
+    font-size: 0.75rem;
+    background-color: $lightgrey;
+    color: $dark;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  &.green-badge span {
+    background-color: $green-l3;
+    color: $green;
+  }
+
+  &.red-badge span {
+    background-color: $red-l3;
+    color: $red;
+  }
+
+  &.blue-badge span {
+    background-color: $blue-l3;
+    color: $blue-d1;
+  }
+
+  &.yellow-badge span {
+    background-color: $yellow-l3;
+    color: $yellow-d1;
+  }
+
+  &.purple-badge span {
+    background-color: $purple-l3;
+    color: $purple;
+  }
+}

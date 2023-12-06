@@ -1,0 +1,71 @@
+@import '../../../assets/styles/mixins.scss';
+
+.selection-card-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  min-height: 110px;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1.6rem;
+  padding-right: 1.5rem;
+  border-left: 4px solid;
+  box-shadow: 2px 2px 4px #0000001f;
+  border-radius: 4px;
+  background-color: #fafbfc;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f3f3f3;
+    // border-color: $green-l2;
+    border-left: 4px solid;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    padding-right: 1.4rem;
+  }
+
+  .card-text {
+    width: 65%;
+
+    h6 {
+      // @include semibold-font;
+      font-size: 1rem;
+      margin-bottom: 0;
+    }
+
+    p {
+      opacity: 0.6;
+      margin-bottom: 0px;
+      @include regular-font;
+    }
+  }
+
+  .card-hex-icon {
+    width: 36%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &.green-card {
+    border-color: $green-l2;
+    color: $green;
+  }
+
+  &.red-card {
+    border-color: $red-l2;
+    color: $red;
+  }
+
+  &.blue-card {
+    border-color: $blue-d1;
+  }
+
+  &.purple-card {
+    border-color: $purple;
+  }
+
+  &.yellow-card {
+    border-color: $yellow-d1;
+  }
+}

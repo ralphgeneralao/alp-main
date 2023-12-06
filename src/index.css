@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.component-selected {
+  @apply tw-relative;
+}
+.component-selected::after {
+  content: ' ';
+  @apply tw-border-primary tw-border tw-border-dashed tw-w-full tw-h-full tw-absolute tw-left-0 tw-top-0 tw-pointer-events-none tw-block;
+}
+
+.transition {
+  transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}

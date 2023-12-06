@@ -1,0 +1,23 @@
+@import '../../assets/styles/mixins.scss';
+
+.account-retrieval-page-wrapper {
+  .hexagon-col {
+    width: 55vw;
+  }
+
+  .routes-col {
+    width: 100vw;
+    position: relative;
+  }
+
+  @include mobile {
+    .account-retrieval-page-wrapper {
+      flex-direction: column;
+
+      .routes-col,
+      .hexagon-col {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+@import '../../../assets/styles/mixins.scss';
+
+.lds-facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 0.3rem;
+  width: 100%;
+  height: 1.5rem;
+
+  &.pulse-white {
+    div {
+      background: $white;
+    }
+  }
+
+  &.pulse-green {
+    div {
+      background: $green;
+    }
+  }
+
+  div {
+    display: inline-block;
+    width: 0.7rem;
+
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+
+    &:nth-child(1) {
+      animation-delay: -0.24s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -0.12s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 0;
+    }
+  }
+}
+
+@keyframes lds-facebook {
+  0% {
+    height: 3rem;
+  }
+  50%,
+  100% {
+    height: 1.5rem;
+  }
+}

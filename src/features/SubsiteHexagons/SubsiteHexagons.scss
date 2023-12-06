@@ -1,0 +1,37 @@
+@import '../../assets/styles/mixins.scss';
+
+.subsites-hex-wrapper {
+  width: 100%;
+  min-height: calc(100vh - ($navbar-height * 2));
+  position: sticky;
+  top: $navbar-height * 2;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    font-weight: 800;
+    opacity: 0.9;
+    margin-bottom: 50px;
+  }
+
+  .hex-cluster {
+    position: relative;
+    width: 530px;
+    height: 360px;
+  }
+}
+
+@include laptop {
+  .subsites-hex-wrapper {
+    height: calc(100vh - ($navbar-height-laptop * 2));
+    top: $navbar-height-laptop * 2;
+
+    .hex-cluster {
+      position: relative;
+      width: 425px;
+      height: 290px;
+    }
+  }
+}

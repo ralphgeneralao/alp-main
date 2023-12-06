@@ -1,0 +1,49 @@
+@import '../../../assets/styles/mixins.scss';
+
+button.submit-btn {
+  width: 100%;
+  background-color: $green-l3;
+  color: $green;
+  border: 0;
+  height: 48px;
+  padding-inline: 14px;
+  padding-block: 10px;
+  font-size: 16px;
+  border: 1px solid $green;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: $green !important;
+  }
+
+  &:active,
+  &:disabled {
+    background-color: $green-d2 !important;
+    color: $white;
+  }
+}
+
+.external-disable {
+  button.submit-btn {
+    &:disabled {
+      background-color: #e4e4e4 !important;
+      color: #00000080;
+      border: 1px solid #ebebeb;
+      font-weight: 600;
+      opacity: 1;
+    }
+  }
+}
+
+.solid-color {
+  button.submit-btn {
+    background-color: $green;
+    color: $white;
+
+    &:hover {
+      background-color: $green-l3 !important;
+      color: $green;
+      border: 2px solid $green;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import '../../../assets/styles/mixins.scss';
+
+.hexagon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  i.hex-1 {
+    font-size: 175px;
+    z-index: 1;
+    text-shadow: 0px 5px 10px #00000029;
+  }
+
+  i.hex-2 {
+    color: $white;
+    z-index: 10;
+    position: absolute;
+    font-size: 165px;
+  }
+
+  i.hex-3 {
+    z-index: 100;
+    position: absolute;
+    font-size: 157px;
+  }
+
+  i.subsite-icon {
+    z-index: 200;
+    position: absolute;
+    font-size: 2.6rem;
+  }
+}
+
+@include laptop {
+  .hexagon-wrapper {
+    i.hex-1 {
+      font-size: 140px;
+    }
+
+    i.hex-2 {
+      color: $white;
+      font-size: 132px;
+    }
+
+    i.hex-3 {
+      font-size: 125px;
+    }
+  }
+}

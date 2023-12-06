@@ -1,0 +1,539 @@
+@import '../../../../assets/styles/mixins.scss';
+
+.homepage-banner-wrapper {
+  width: 100%;
+  // gap: 5rem;
+  height: 80vh;
+  padding: 0 7rem;
+  background-image: url('../../../../assets/img/alp_homepage_banner-bg.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  .homepage-header {
+    padding-block: 12rem 0;
+
+    h1 {
+      font-weight: bold;
+      font-size: 44px;
+      letter-spacing: 2.29px;
+    }
+
+    .banner-btn {
+      padding-block: 3rem;
+
+      button.green-btn {
+        gap: 1rem;
+        align-items: center;
+        margin-left: 8rem;
+        font-weight: bold;
+        // height: 64px;
+        // border: 2px solid;
+        font-size: 22px;
+        // padding: 0 25px;
+        background-color: $white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        padding-inline: 0;
+        padding-block: 30px;
+
+        span {
+          border: 1px solid;
+          border-color: $white;
+          border-radius: 8px;
+          padding-inline: 35px;
+          margin-inline: 3px;
+          padding-block: 10px;
+        }
+
+        i {
+          padding: 5px;
+          font-size: 15px;
+          border: 2px solid;
+          border-color: $green;
+          border-radius: 50%;
+        }
+
+        &:hover {
+          background-color: $green;
+        }
+      }
+
+      button.green-btn:hover {
+        i {
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  .homepage-hexagons {
+    top: 5rem;
+    order: 2;
+    transform: skew(8deg, -10deg);
+    //1 HEX
+    .header-hex-0 {
+      position: absolute;
+
+      i.hex-1 {
+        position: absolute;
+        z-index: 1;
+        color: $white;
+        font-size: 195px;
+      }
+      i.hex-2 {
+        //   position: absolute;
+        color: $green;
+        font-size: 211px;
+      }
+
+      .hex-name {
+        z-index: 1;
+        color: $green;
+        font-weight: bold;
+        font-size: 25px;
+        transform: skew(-7deg, 10deg);
+      }
+    }
+    .header-hex-0:hover {
+      i.hex-1 {
+        color: #e6f0f0;
+      }
+    }
+    //2 HEX
+    .header-hex-1 {
+      position: absolute;
+      top: 14rem;
+      left: -0.5rem;
+
+      i.hex-1 {
+        position: absolute;
+        z-index: 1;
+        color: $white;
+        font-size: 210px;
+      }
+      i.hex-2 {
+        //   position: absolute;
+        color: $red;
+        font-size: 227px;
+      }
+
+      .hex-name {
+        z-index: 1;
+        width: 210px;
+        color: $red;
+        font-weight: bold;
+        font-size: 26px;
+        transform: skew(-8deg, 10deg);
+      }
+    }
+    .header-hex-1:hover {
+      i.hex-1 {
+        color: #f5e6eb;
+      }
+    }
+    //3 HEX
+    .header-hex-2 {
+      position: absolute;
+      top: 123px;
+      left: 205px;
+
+      i.hex-1 {
+        color: $white;
+        font-size: 196px;
+        // position: absolute;
+        // text-shadow: -5px 10px #2dc1be, 5px 10px $green, 10px 0 $yellow, 5px -10px $red, -5px -10px $purple, -10px 5px $blue;
+        // text-shadow: -10px 0 $purple, -5px -9px $red, 5px -9px $yellow, 10px 0px $green, 5px 8px #2dc1be, -5px 9px $blue;
+      }
+
+      .line1 {
+        position: absolute;
+        bottom: 47px;
+        left: -36px;
+        z-index: 1;
+        width: 122px;
+        height: 8px;
+        background-color: #4950df;
+        transform: rotate(60deg);
+      }
+
+      .line2 {
+        position: absolute;
+        bottom: -6px;
+        left: 53px;
+        z-index: 0;
+        width: 115px;
+        height: 8px;
+        background-color: #2dc1be;
+        transform: rotate(0deg);
+      }
+
+      .line3 {
+        position: absolute;
+        right: -31px;
+        bottom: 44px;
+        z-index: 1;
+        width: 120px;
+        height: 8px;
+        background-color: $green;
+        transform: rotate(120deg);
+      }
+
+      .line4 {
+        position: absolute;
+        top: 45px;
+        right: -31px;
+        z-index: 0;
+        width: 111px;
+        height: 8px;
+        background-color: $yellow;
+        transform: rotate(242deg);
+      }
+
+      .line5 {
+        position: absolute;
+        top: -3px;
+        left: 50px;
+        z-index: 0;
+        width: 124px;
+        height: 8px;
+        background-color: $red;
+        transform: rotate(181deg);
+      }
+
+      .line6 {
+        position: absolute;
+        top: 42px;
+        left: -32px;
+        z-index: 1;
+        width: 111px;
+        height: 8px;
+        background-color: $purple;
+        transform: rotate(120deg);
+      }
+
+      .hex-name {
+        z-index: 1;
+        width: 210px;
+        color: $black;
+        font-weight: bold;
+        font-size: 23px;
+        transform: skew(-7deg, 10deg);
+      }
+    }
+    .header-hex-2:hover {
+      i.hex-1 {
+        // color: #edeefc;
+        color: #ecedfc;
+      }
+    }
+    //4 HEX
+    .header-hex-3 {
+      position: absolute;
+      top: -0.7rem;
+      left: 24rem;
+
+      i.hex-1 {
+        position: absolute;
+        z-index: 1;
+        color: $white;
+        font-size: 208px;
+      }
+      i.hex-2 {
+        //   position: absolute;
+        color: $purple;
+        font-size: 225px;
+      }
+
+      .hex-name {
+        z-index: 1;
+        width: 210px;
+        color: $purple;
+        font-weight: bold;
+        font-size: 25px;
+        transform: skew(-7deg, 10deg);
+      }
+    }
+    .header-hex-3:hover {
+      i.hex-1 {
+        color: #f2e6f2;
+      }
+    }
+    //5 HEX
+    .header-hex-4 {
+      position: absolute;
+      top: 14rem;
+      left: 24.5rem;
+
+      i.hex-1 {
+        position: absolute;
+        z-index: 1;
+        color: $white;
+        font-size: 189px;
+      }
+      i.hex-2 {
+        //   position: absolute;
+        color: $yellow;
+        font-size: 205px;
+      }
+
+      .hex-name {
+        z-index: 1;
+        width: 205px;
+        color: $yellow;
+        font-weight: bold;
+        font-size: 23px;
+        transform: skew(-7deg, 10deg);
+      }
+    }
+
+    .header-hex-5 {
+      position: absolute;
+      top: 21rem;
+      left: 13rem;
+
+      i.hex-1 {
+        position: absolute;
+        z-index: 1;
+        color: $white;
+        font-size: 189px;
+      }
+      i.hex-2 {
+        color: $blue;
+        font-size: 205px;
+      }
+
+      .hex-name {
+        z-index: 1;
+        width: 205px;
+        color: $blue;
+        font-weight: bold;
+        font-size: 23px;
+        transform: skew(-7deg, 10deg);
+      }
+    }
+
+    .header-hex-4:hover {
+      i.hex-1 {
+        color: #fef5ec;
+      }
+    }
+
+    .header-hex-5:hover {
+      i.hex-1 {
+        color: #edeefc;
+      }
+    }
+
+    // transparent BG of hexagons
+    // 1 BG of hex
+    .hex-bg-0 {
+      position: absolute;
+      top: 8rem;
+      left: 6rem;
+
+      i.hex-3 {
+        position: absolute;
+        z-index: -1;
+        color: $white;
+        font-size: 204px;
+        text-shadow:
+          -7px -9px $green,
+          -11px -1px $green,
+          -5px 10px $green,
+          15px -7px $green;
+        opacity: 0.1;
+      }
+    }
+    // 2 BG of hex
+    .hex-bg-1 {
+      position: absolute;
+      top: 22.5rem;
+      left: 5.5rem;
+
+      i.hex-3 {
+        position: absolute;
+        z-index: -1;
+        color: $white;
+        font-size: 204px;
+        text-shadow:
+          -7px -9px $red,
+          -11px -1px $red,
+          -5px 10px $red,
+          5px 9px $red;
+        opacity: 0.1;
+      }
+    }
+    // 3 BG of hex
+    .hex-bg-2 {
+      position: absolute;
+      top: 15rem;
+      left: 17.5rem;
+
+      i.hex-3 {
+        position: absolute;
+        z-index: -1;
+        color: $white;
+        font-size: 204px;
+        text-shadow:
+          -7px -9px $blue,
+          -11px -1px $blue,
+          -5px 10px $blue,
+          5px 9px $blue;
+        opacity: 0.1;
+      }
+    }
+    // 4 BG of hex
+    .hex-bg-3 {
+      position: absolute;
+      top: 8rem;
+      left: 30rem;
+
+      i.hex-3 {
+        position: absolute;
+        z-index: -1;
+        color: $white;
+        font-size: 204px;
+        text-shadow:
+          -7px -9px $purple,
+          -11px -1px $purple,
+          -5px 10px $purple,
+          5px 9px $purple;
+        opacity: 0.1;
+      }
+    }
+    // 5 BG of hex
+    .hex-bg-4 {
+      position: absolute;
+      top: 21rem;
+      left: 30.3rem;
+
+      i.hex-3 {
+        position: absolute;
+        z-index: -1;
+        color: $white;
+        font-size: 204px;
+        text-shadow:
+          -7px -9px $yellow,
+          -11px -1px $yellow,
+          -5px 10px $yellow,
+          5px 9px $yellow;
+        opacity: 0.1;
+      }
+    }
+
+    .hex-bg-5 {
+      position: absolute;
+      top: 28.5rem;
+      left: 18.5rem;
+
+      i.hex-3 {
+        position: absolute;
+        z-index: -1;
+        color: $white;
+        font-size: 204px;
+        text-shadow:
+          -7px -9px $blue,
+          -11px -1px $blue,
+          -5px 10px $blue,
+          5px 9px $blue;
+        opacity: 0.1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .homepage-banner-wrapper {
+    height: 90vh;
+    .homepage-hexagons {
+      .header-hex-0 {
+        top: -1rem;
+        left: -1rem;
+      }
+      .header-hex-1 {
+        bottom: 12rem;
+        left: -35px;
+      }
+      .header-hex-2 {
+        top: 108px;
+        left: 181px;
+      }
+      .hex-bg-1 {
+        top: 24.5rem;
+        left: 4.5rem;
+      }
+      .header-hex-3 {
+        top: -1rem;
+        left: 26rem;
+      }
+      .hex-bg-3 {
+        left: 32rem;
+      }
+      .header-hex-4 {
+        top: 15.5rem;
+        left: 26rem;
+      }
+      .header-hex-5 {
+        bottom: 56px;
+        left: 176px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .homepage-banner-wrapper {
+    flex-direction: column;
+    height: 120vh;
+
+    .homepage-header {
+      order: 2;
+      text-align: center;
+      padding-block: 45rem 0;
+
+      .banner-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-block: 3rem 0;
+
+        button.green-btn {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .homepage-hexagons {
+      top: 3rem;
+      left: 6rem;
+      order: 1;
+
+      .header-hex-0 {
+        top: -1rem;
+        left: -1rem;
+      }
+      .header-hex-1 {
+        top: 23rem;
+        left: -2rem;
+      }
+      .hex-bg-1 {
+        top: 24.5rem;
+        left: 4.5rem;
+      }
+      .header-hex-3 {
+        top: -1rem;
+        left: 26rem;
+      }
+      .hex-bg-3 {
+        left: 32rem;
+      }
+      .header-hex-4 {
+        top: 15.5rem;
+        left: 26rem;
+      }
+      .header-hex-5 {
+        top: 30.5rem;
+      }
+    }
+  }
+}

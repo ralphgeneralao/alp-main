@@ -1,0 +1,291 @@
+@import '../../../../assets/styles/mixins.scss';
+
+.homepage-card-wrapper {
+  justify-content: space-around;
+  padding-block: 5rem;
+  padding-inline: 10rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 112;
+
+  .homepage-card-container {
+    width: 375.69px;
+
+    .homepage-card-header {
+      button {
+        width: 100%;
+        height: 64px;
+        font-size: 22px;
+        background-color: $white;
+        font-weight: bold;
+        border: 2px solid $black;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        line-height: 1.3;
+        padding-inline: 0;
+
+        span {
+          width: 100%;
+          height: 58px;
+          border: 2px solid;
+          border-color: $white;
+          border-radius: 8px;
+          margin-inline: 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+
+    .btn-theme-green {
+      button {
+        color: $green;
+
+        &:hover {
+          background-color: $green;
+          border-color: $green;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .btn-theme-blue {
+      button {
+        color: $blue;
+
+        &:hover {
+          background-color: $blue;
+          border-color: $blue;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .btn-theme-red {
+      button {
+        color: $red;
+
+        &:hover {
+          background-color: $red;
+          border-color: $red;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .footer-btn-theme-black {
+      button {
+        color: $black;
+
+        &:hover {
+          background-color: $black;
+          border-color: $black;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .footer-btn-theme-purple {
+      button {
+        color: $purple;
+
+        &:hover {
+          background-color: $purple;
+          border-color: $purple;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .footer-btn-theme-yellow {
+      button {
+        color: $yellow;
+
+        &:hover {
+          background-color: $yellow;
+          border-color: $yellow;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .homepage-card-body {
+      position: relative;
+      border: 1px solid;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      margin-block: 1rem;
+      min-height: 455px;
+
+      .homepage-card-gif {
+        img {
+          width: 325px;
+        }
+      }
+
+      .homepage-card-header {
+        font-size: 18px;
+        letter-spacing: 0.49px;
+        font-weight: bold;
+        margin-top: 1rem;
+      }
+
+      .homepage-card-desc {
+        font-size: 14px;
+        letter-spacing: 0.45px;
+        margin-block: 1rem;
+      }
+
+      .homepage-card-btn {
+        // position: absolute;
+        // bottom: 1rem;
+        // left: 7.5rem;
+        position: absolute;
+        bottom: 17px;
+        left: 34%;
+
+        button {
+          color: $white;
+          height: 23px;
+          font-size: 10px;
+          text-transform: uppercase;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 auto;
+          border-radius: 4px;
+          font-weight: bold;
+          gap: 1rem;
+        }
+
+        i {
+          border-radius: 50%;
+          border: 1px solid;
+          border-color: $white;
+          font-size: 9px;
+          padding: 2px;
+        }
+      }
+    }
+
+    .theme-green {
+      border-color: $green;
+
+      button {
+        background-color: $green;
+        border-color: $green;
+
+        &:hover {
+          background-color: $white;
+          color: $green;
+
+          i {
+            border-color: $green;
+          }
+        }
+      }
+    }
+
+    .theme-blue {
+      border-color: $blue;
+
+      button {
+        background-color: $blue;
+        border-color: $blue;
+
+        &:hover {
+          background-color: $white;
+          color: $blue;
+
+          i {
+            border-color: $blue;
+          }
+        }
+      }
+    }
+
+    .theme-red {
+      border-color: $red;
+
+      button {
+        background-color: $red;
+        border-color: $red;
+
+        &:hover {
+          background-color: $white;
+          color: $red;
+
+          i {
+            border-color: $red;
+          }
+        }
+      }
+    }
+
+    .homepage-card-footer {
+      button {
+        width: 100%;
+        height: 64px;
+        font-size: 22px;
+        background-color: $white;
+        font-weight: bold;
+        border: 2px solid $black;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        line-height: 1.3;
+        padding-inline: 0;
+
+        span {
+          width: 100%;
+          height: 58px;
+          border: 2px solid;
+          border-color: $white;
+          border-radius: 8px;
+          margin-inline: 1px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1068px) {
+  .homepage-card-wrapper {
+    flex-direction: column;
+
+    .homepage-card-container {
+      width: 361.88px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+  }
+}

@@ -1,0 +1,235 @@
+@import './mixins.scss';
+
+.btn {
+  @include medium-font;
+  padding-inline: 14px;
+  padding-block: 10px;
+  border-radius: 8px;
+  height: 40px; // default is medium
+  font-size: 14px;
+
+  &.abtn-xs {
+    padding-inline: 8px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  &.abtn-sm {
+    padding-inline: 8px;
+    height: 32px;
+    font-size: 0.75rem;
+  }
+
+  &.abtn-lg {
+    padding-inline: 1rem;
+    height: 48px;
+  }
+
+  &.abtn-xl {
+    padding-inline: 1rem;
+    height: 56px;
+  }
+
+  &.green-btn {
+    background-color: $green;
+    color: $white;
+
+    &:hover,
+    &:focus {
+      background-color: $green-l1;
+    }
+  }
+
+  &.reversed-color-btn {
+    background-color: $green-l3;
+    border: 1px solid $green;
+    color: $green;
+    @include regular-font;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid $green;
+      background-color: $green;
+      color: $white !important;
+    }
+
+    &.green-btn {
+      border: 1px solid $green;
+      background-color: $green-l3;
+      color: $green;
+
+      &:hover,
+      &:focus {
+        background-color: $green;
+      }
+    }
+
+    &.purple-btn {
+      border: 1px solid $purple;
+      background-color: $purple-l3;
+      color: $purple;
+
+      &:hover,
+      &:focus {
+        background-color: $purple !important;
+      }
+    }
+
+    &.red-btn {
+      border: 1px solid $red;
+      background-color: $red-l3;
+      color: $red;
+
+      &:hover,
+      &:focus {
+        background-color: $red !important;
+      }
+    }
+
+    &.yellow-btn {
+      border: 1px solid $yellow;
+      background-color: $yellow-l3;
+      color: $yellow;
+
+      &:hover,
+      &:focus {
+        background-color: $yellow !important;
+      }
+    }
+
+    &.blue-btn {
+      border: 1px solid $blue;
+      background-color: $blue-l3;
+      color: $blue;
+
+      &:hover,
+      &:focus {
+        background-color: $blue !important;
+      }
+    }
+  }
+}
+
+//inputs
+.alp-form {
+  input,
+  select {
+    @include medium-font;
+    border: 2px solid $input-border;
+    // background-color: $white;
+    border-radius: 8px;
+    padding-inline: 14px;
+    padding-block: 10px;
+    height: 48px; // default is medium
+    font-family: $font-montserrat;
+    color: $dark;
+
+    &:hover {
+      border: solid 2px $green-l2;
+    }
+
+    &:focus {
+      border-color: $input-border-focus;
+      outline: 0;
+      box-shadow: none;
+      color: rgba($dark, 0.8);
+      // -webkit-box-shadow: 0 0 0 30px $input-bg-focus inset !important;
+    }
+
+    &.input-error {
+      border-color: $input-border-error;
+    }
+
+    &.input-warning {
+      border-color: $input-border-warning;
+    }
+
+    &::placeholder {
+      // font-family: Verdana;
+      opacity: 0.6;
+      color: $green-l1;
+    }
+  }
+
+  input[type='password'] {
+    padding-inline: 14px 40px;
+  }
+
+  input[type='radio'] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: $white;
+    /* Not removed via appearance */
+    margin: 0;
+
+    display: grid;
+    place-content: center;
+    padding: 8px;
+    border: 1px solid $green;
+    cursor: pointer;
+    height: 15px;
+
+    &:focus,
+    &:hover {
+      border-color: $green;
+    }
+  }
+
+  input[type='radio']:hover {
+    box-shadow: 0px 0px 4px 4px #e6f0f0;
+  }
+
+  input[type='radio']:checked {
+    border: 1px solid $green;
+  }
+
+  input[type='radio']::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 10px 10px $green;
+  }
+
+  input[type='radio']:checked::before {
+    transform: scale(1);
+  }
+
+  input[type='checkbox'] {
+    padding: 0.5rem;
+    border: 2px solid $green;
+    height: 15px;
+    width: 15px;
+    size: 1px;
+
+    &:focus {
+      background-color: none !important;
+    }
+  }
+
+  input[type='checkbox']:hover {
+    box-shadow: 0px 0px 4px 4px #e6f0f0;
+  }
+
+  input[type='checkbox']:checked {
+    background-color: $green-d1;
+    border: 2px solid $green;
+    // -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  }
+
+  .desc1 {
+    margin-bottom: 0.6rem;
+  }
+
+  .desc2 {
+    font-size: 12px;
+    margin-bottom: 3rem;
+    padding-inline: 1rem;
+  }
+}

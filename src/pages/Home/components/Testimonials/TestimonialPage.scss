@@ -1,0 +1,83 @@
+@import '../../../../assets/styles/mixins.scss';
+
+.testimonial-wrapper {
+  padding: 5rem 7rem;
+  justify-content: center;
+  align-items: center;
+
+  .testimonial-logo-col {
+    position: relative;
+    z-index: 1;
+
+    .testimonial-logo2 {
+      left: -20px;
+      top: 10px;
+      opacity: 0.1;
+    }
+  }
+
+  .testimonial-desc-col {
+    overflow: hidden;
+    margin-left: -35px;
+
+    .purple-box {
+      background-color: $purple;
+      height: 7px;
+      width: 390px;
+      margin-bottom: -1px;
+      clip-path: polygon(0% 0%, 98% 5%, 100% 100%, 0% 100%);
+    }
+
+    .blue-box {
+      background-color: $blue;
+      height: 7px;
+      width: 475px;
+      margin-top: -1px;
+      clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 0% 100%);
+    }
+
+    .testimonial-desc-header {
+      text-transform: uppercase;
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      background-color: $purple-l1;
+      color: $white;
+      padding: 0 35px;
+      width: 615px;
+      clip-path: polygon(0% 0%, 95% 5%, 100% 100%, 0% 100%);
+    }
+
+    .testimonial-desc-item {
+      background-color: #6f75f7;
+      color: $white;
+      padding: 5px 35px;
+      font-size: 20px;
+      font-weight: normal;
+      letter-spacing: 2px;
+      clip-path: polygon(0% 0%, 100% 0%, 97% 100%, 0% 100%);
+      overflow: hidden;
+      display: flex;
+
+      .testimonial-scroll {
+        white-space: nowrap;
+        animation: scroll 250s linear infinite;
+      }
+      //   .testimonial-scroll.active {
+      //     display: block;
+      //     flex-direction: column;
+      //     white-space: nowrap;
+      //     animation: scroll 20s linear infinite;
+      //   }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

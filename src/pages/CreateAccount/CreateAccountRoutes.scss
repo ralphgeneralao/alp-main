@@ -1,0 +1,24 @@
+@import '../../assets/styles/mixins.scss';
+
+.create-account-page-wrapper {
+  .hexagon-col {
+    width: 55vw;
+  }
+
+  .routes-col {
+    // width: 45vw;
+    width: 100vw;
+    position: relative;
+  }
+}
+
+@include mobile {
+  .create-account-page-wrapper {
+    flex-direction: column;
+
+    .routes-col,
+    .hexagon-col {
+      width: 100%;
+    }
+  }
+}

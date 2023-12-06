@@ -1,0 +1,19 @@
+@import '../../assets/styles/mixins.scss';
+
+main {
+  position: relative;
+  min-height: calc(100vh - ($navbar-height * 2));
+  top: $navbar-height;
+
+  .background-wrapper {
+    background-color: transparent;
+    top: -70px;
+    bottom: 75px;
+  }
+}
+
+@include laptop {
+  main {
+    min-height: calc(100vh - ($navbar-height-laptop * 2));
+  }
+}

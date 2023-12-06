@@ -1,0 +1,383 @@
+@import '../../../../assets/styles/mixins.scss';
+
+.homepage-info-wrapper {
+  // padding: 0 7rem;
+  // gap: 5rem;
+  // justify-content: space-around;
+
+  .homepage-info-col1 {
+    padding-top: 12rem;
+    transform: skew(-10deg, 9deg);
+
+    //YOU HEX
+    .homepage-info-you {
+      position: relative;
+
+      .info-you-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i.you-hex-1 {
+          font-size: 275px;
+          color: $red;
+          position: absolute;
+        }
+
+        i.you-hex-2 {
+          color: $white;
+          position: absolute;
+          font-size: 267px;
+        }
+
+        i.you-hex-3 {
+          color: transparent;
+          position: absolute;
+          font-size: 259px;
+          background-image: linear-gradient(to right, #aa2b56, #bb5778);
+          background-clip: text;
+        }
+
+        .homepage-you-text {
+          z-index: 1;
+          text-align: center;
+          transform: skew(9deg, -9deg);
+
+          .text-header {
+            font-size: 75px;
+            letter-spacing: 1.65px;
+            font-weight: bold;
+            color: $white;
+          }
+
+          .text-body {
+            font-size: 34px;
+            color: $white !important;
+            margin-top: -20px;
+            font-weight: normal;
+          }
+        }
+
+        i.you-hex-4 {
+          position: absolute;
+          font-size: 310px;
+          z-index: -1;
+          color: #aa2b56;
+          opacity: 0.1;
+          margin-left: -2rem;
+        }
+        i.you-hex-5 {
+          font-size: 329px;
+          position: absolute;
+          z-index: -1;
+          color: #aa2b56;
+          opacity: 0.16;
+          margin-left: -2rem;
+        }
+      }
+      .info-you-div:hover {
+        i.you-hex-1 {
+          color: $white;
+        }
+        i.you-hex-2 {
+          color: $red;
+        }
+        i.you-hex-3 {
+          background-image: linear-gradient(to right, $white, $white);
+        }
+
+        .homepage-you-text {
+          .text-header {
+            color: $red;
+          }
+
+          .text-body {
+            color: $red !important;
+          }
+        }
+      }
+    }
+    //WHY HEX
+    .homepage-info-why {
+      position: relative;
+      left: 13.1rem;
+      bottom: 14.5rem;
+
+      .info-why-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i.why-hex-1 {
+          font-size: 150px;
+          color: $green;
+          position: absolute;
+        }
+        i.why-hex-2 {
+          font-size: 144px;
+          color: $white;
+          position: absolute;
+        }
+        i.why-hex-3 {
+          color: transparent;
+          font-size: 140px;
+          position: absolute;
+          background-image: linear-gradient(to right, #3b8989, #8bb9b9);
+          background-clip: text;
+        }
+
+        .homepage-why-text {
+          text-align: center;
+          transform: skew(10deg, -8deg);
+
+          .text-header {
+            font-size: 40px;
+            font-weight: bold;
+            color: $white;
+          }
+
+          .text-body {
+            font-size: 16px;
+            color: $white !important;
+            margin-top: -20px;
+            font-weight: normal;
+          }
+        }
+
+        i.why-hex-4 {
+          font-size: 159px;
+          z-index: -1;
+          color: $green;
+          opacity: 0.1;
+          position: absolute;
+          margin-left: 3rem;
+          margin-top: -2rem;
+        }
+        i.why-hex-5 {
+          font-size: 175px;
+          position: absolute;
+          z-index: -1;
+          color: $green;
+          opacity: 0.16;
+          margin-left: 3rem;
+          margin-top: -2rem;
+        }
+      }
+    }
+    .info-why-div:hover {
+      i.why-hex-1 {
+        color: $white;
+      }
+      i.why-hex-2 {
+        color: $green;
+      }
+      i.why-hex-3 {
+        background-image: linear-gradient(to right, $white, $white);
+      }
+
+      .homepage-why-text {
+        .text-header {
+          color: $green;
+        }
+
+        .text-body {
+          color: $green !important;
+        }
+      }
+    }
+    //WE HEX
+    .homepage-info-we {
+      position: relative;
+      bottom: 12rem;
+      left: 13.8rem;
+
+      .info-we-div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i.we-hex-1 {
+          font-size: 202px;
+          color: $blue;
+          position: absolute;
+        }
+        i.we-hex-2 {
+          font-size: 196px;
+          color: $white;
+          position: absolute;
+        }
+        i.we-hex-3 {
+          color: transparent;
+          font-size: 192px;
+          position: absolute;
+          background-image: linear-gradient(to right, #565de7, #898ef8);
+          background-clip: text;
+        }
+
+        .homepage-we-text {
+          z-index: 1;
+          text-align: center;
+          transform: skew(9deg, -9deg);
+
+          .text-header {
+            font-size: 68px;
+            font-weight: bold;
+            color: $white;
+          }
+
+          .text-body {
+            font-size: 23px;
+            color: $white !important;
+            margin-top: -20px;
+            font-weight: normal;
+          }
+        }
+
+        i.we-hex-4 {
+          font-size: 226px;
+          z-index: -1;
+          color: $blue;
+          opacity: 0.1;
+          position: absolute;
+          margin-top: 2.5rem;
+          margin-left: 4rem;
+        }
+        i.we-hex-5 {
+          font-size: 242px;
+          position: absolute;
+          z-index: -1;
+          color: $blue;
+          opacity: 0.16;
+          margin-top: 2.5rem;
+          margin-left: 4rem;
+        }
+      }
+    }
+    .info-we-div:hover {
+      i.we-hex-1 {
+        color: $white;
+      }
+      i.we-hex-2 {
+        color: $blue;
+      }
+      i.we-hex-3 {
+        background-image: linear-gradient(to right, $white, $white);
+      }
+
+      .homepage-we-text {
+        .text-header {
+          color: $blue;
+        }
+
+        .text-body {
+          color: $blue !important;
+        }
+      }
+    }
+  }
+
+  .homepage-info-col2 {
+    .you-homepage-header {
+      span {
+        font-size: 43px;
+        text-transform: uppercase;
+        letter-spacing: 1.29px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+
+    .we-homepage-header {
+      span {
+        font-size: 43px;
+        text-transform: uppercase;
+        letter-spacing: 1.29px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          color: $blue;
+        }
+      }
+    }
+
+    .why-homepage-header {
+      span {
+        font-size: 43px;
+        text-transform: uppercase;
+        letter-spacing: 1.29px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        z-index: 111;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+
+    .you-underline {
+      width: 42px;
+      height: 8px;
+      background-color: $red;
+      margin-top: -0.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 0.7rem;
+    }
+
+    .we-underline {
+      width: 42px;
+      height: 8px;
+      background-color: #4950df;
+      margin-top: -0.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 0.7rem;
+    }
+
+    .why-underline {
+      width: 42px;
+      height: 8px;
+      background-color: #2b8080;
+      margin-top: -0.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 0.7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .homepage-info-wrapper {
+    padding: 0;
+    gap: 10rem;
+
+    .homepage-info-col1 {
+      .homepage-info-you {
+        left: -2rem;
+      }
+      .homepage-info-why {
+        bottom: 16.8rem;
+      }
+      .homepage-info-we {
+        bottom: 13.6rem;
+        left: 14rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .homepage-info-wrapper {
+    padding: 0 7rem;
+    flex-direction: column;
+
+    .homepage-info-col1 {
+      padding-top: 7rem;
+      height: 49vh;
+    }
+  }
+}

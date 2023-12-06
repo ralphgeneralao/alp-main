@@ -1,0 +1,33 @@
+@import '../../assets//styles//mixins.scss';
+
+.license-display-content {
+  width: 400px;
+  margin: 13vh auto;
+  padding-bottom: 200px;
+
+  .horizontal-divider {
+    height: 1px;
+    background-color: $lightgrey;
+    opacity: 0.3;
+    margin: 2rem 0rem;
+  }
+
+  .section-header {
+    @include bold-font;
+    font-size: 1rem;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+
+  .card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+}
+
+@include laptop {
+  .license-display-content {
+    margin: 50px auto;
+  }
+}

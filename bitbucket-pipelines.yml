@@ -1,0 +1,286 @@
+#  Template React Deploy
+
+#  This template allows you to deploy your React app to an AWS S3 bucket and invalidate the old AWS Cloudfront distribution.
+#  The workflow allows running tests, code linting and security scans on feature branches (as well as master).
+#  The react app will be validated, deployed to S3 and trigger an AWS Cloudfront distribution invalidation to refresh the CDN caches after the code is merged to master.
+
+# Prerequisites: $AWS_ACCESS_KEY_ID, $AWS_SECRET_ACCESS_KEY setup in the Deployment variables.
+# For advanced cases, please, follow examples from the pipe's:
+# README https://bitbucket.org/atlassian/aws-s3-deploy/src/master/README.md
+# README https://bitbucket.org/atlassian/aws-cloudfront-invalidate/src/master/README.md
+
+image: node:18
+
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          name: delete cache if changes in the build dependencies
+          script:
+            - pipe: atlassian/bitbucket-clear-cache:3.3.0
+              variables:
+                BITBUCKET_USERNAME: $BITBUCKET_USER_NAME
+                BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+                CACHES: ['node']
+          condition:
+            changesets:
+              includePaths:
+                - package.json
+      - step:
+          name: Build and test
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build:staging
+  branches:
+    development:
+      - step:
+          name: delete cache if changes in the build dependencies
+          script:
+            - pipe: atlassian/bitbucket-clear-cache:3.3.0
+              variables:
+                BITBUCKET_USERNAME: $BITBUCKET_USER_NAME
+                BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+                CACHES: ['node']
+          condition:
+            changesets:
+              includePaths:
+                - package.json
+      - step:
+          name: Build and test
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build:staging
+          artifacts:
+            - build/**
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.5.1
+      - step:
+          name: Deploy to Staging
+          deployment: Staging
+          clone:
+            enabled: false
+          script:
+            # sync files to S3
+            - pipe: atlassian/aws-s3-deploy:1.1.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                S3_BUCKET: 'alearningplace-main'
+                LOCAL_PATH: 'build'
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                DISTRIBUTION_ID: 'E2EAJ46TP5GJ2O'
+                PATHS: '/index.html /subscribe.html /asset-manifest.json /manifest.json'
+    main-canary:
+      - step:
+          name: delete cache if changes in the build dependencies
+          script:
+            - pipe: atlassian/bitbucket-clear-cache:3.3.0
+              variables:
+                BITBUCKET_USERNAME: $BITBUCKET_USER_NAME
+                BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+                CACHES: ['node']
+          condition:
+            changesets:
+              includePaths:
+                - package.json
+      - step:
+          name: Build and test
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build:canary
+          artifacts:
+            - build/**
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.5.1
+      - step:
+          name: Deploy to Canary
+          deployment: Staging
+          clone:
+            enabled: false
+          script:
+            # sync files to S3
+            - pipe: atlassian/aws-s3-deploy:1.1.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                S3_BUCKET: 'alearningplace-main-canary'
+                LOCAL_PATH: 'build'
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                DISTRIBUTION_ID: 'E2R2QH0IUJ0TH7'
+                PATHS: '/index.html /subscribe.html /asset-manifest.json /manifest.json'
+    prelaunch:
+      - step:
+          name: delete cache if changes in the build dependencies
+          script:
+            - pipe: atlassian/bitbucket-clear-cache:3.3.0
+              variables:
+                BITBUCKET_USERNAME: $BITBUCKET_USER_NAME
+                BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+                CACHES: ['node']
+          condition:
+            changesets:
+              includePaths:
+                - package.json
+      - step:
+          name: Build and test
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build:canary
+          artifacts:
+            - build/**
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.5.1
+      - step:
+          name: Deploy to Prelaunch
+          deployment: Staging
+          clone:
+            enabled: false
+          script:
+            # sync files to S3
+            - pipe: atlassian/aws-s3-deploy:1.1.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                S3_BUCKET: 'alearningplace-main-prelaunch'
+                LOCAL_PATH: 'build'
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                DISTRIBUTION_ID: 'E2IX3WN0D7G88H'
+                PATHS: '/index.html /subscribe.html /asset-manifest.json /manifest.json'
+    main:
+      - step:
+          name: delete cache if changes in the build dependencies
+          script:
+            - pipe: atlassian/bitbucket-clear-cache:3.1.1
+              variables:
+                BITBUCKET_USERNAME: $BITBUCKET_USER_NAME
+                BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+                CACHES: ['node']
+          condition:
+            changesets:
+              includePaths:
+                - package.json
+      - step:
+          name: Build and test
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build:production
+          artifacts:
+            - build/**
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.5.1
+      - step:
+          name: Deploy to Production
+          deployment: Production
+          clone:
+            enabled: false
+          script:
+            # sync files to S3
+            - pipe: atlassian/aws-s3-deploy:1.1.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                S3_BUCKET: 'alearningplace-main-prod'
+                LOCAL_PATH: 'build'
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                DISTRIBUTION_ID: 'E1AEP7JVBF9AEH'
+                PATHS: '/index.html /subscribe.html /asset-manifest.json /manifest.json'
+    rm-main:
+      - step:
+          name: delete cache if changes in the build dependencies
+          script:
+            - pipe: atlassian/bitbucket-clear-cache:3.1.1
+              variables:
+                BITBUCKET_USERNAME: $BITBUCKET_USER_NAME
+                BITBUCKET_APP_PASSWORD: $BITBUCKET_APP_PASSWORD
+                CACHES: ['node']
+          condition:
+            changesets:
+              includePaths:
+                - package.json
+      - step:
+          name: Build and test
+          caches:
+            - node
+          script:
+            - npm install
+            - npm run build:rm-prod
+          artifacts:
+            - build/**
+      - step:
+          name: Security Scan
+          script:
+            # Run a security scan for sensitive data.
+            # See more security tools at https://bitbucket.org/product/features/pipelines/integrations?&category=security
+            - pipe: atlassian/git-secrets-scan:0.5.1
+      - step:
+          name: Deploy to Production
+          deployment: Production
+          clone:
+            enabled: false
+          script:
+            # sync files to S3
+            - pipe: atlassian/aws-s3-deploy:1.1.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                S3_BUCKET: 'relationalmathematics-main-prod'
+                LOCAL_PATH: 'build'
+            # triggering a distribution invalidation to refresh the CDN caches
+            - pipe: atlassian/aws-cloudfront-invalidate:0.6.0
+              variables:
+                AWS_ACCESS_KEY_ID: $AWS_KEY
+                AWS_SECRET_ACCESS_KEY: $AWS_SECRET
+                AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+                DISTRIBUTION_ID: 'E29OXYL33R1X3F'
+                PATHS: '/index.html /subscribe.html /asset-manifest.json /manifest.json'

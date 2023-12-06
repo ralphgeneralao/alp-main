@@ -1,0 +1,302 @@
+@import 'normalize.css';
+@import 'animate.css';
+@import './mixins.scss';
+
+body {
+  margin: 0;
+  color: #181818;
+  font-weight: 500;
+  font-family: $font-montserrat;
+  @include medium-font;
+
+  &::-webkit-scrollbar-track {
+    width: 8px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    opacity: 0.5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    opacity: 0.5;
+  }
+
+  //hide arrows from number input
+  /* Chrome, Safari, Edge, Opera */
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input[type='password'] {
+    font-family: Verdana;
+  }
+}
+
+//flexes
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.horizontally-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-v-center {
+  justify-content: center;
+}
+.flex-v-end {
+  justify-content: flex-end;
+}
+
+.flex-h-center {
+  align-items: center;
+}
+.flex-h-start {
+  align-items: flex-start;
+}
+.flex-h-end {
+  align-items: flex-end;
+}
+
+//positions
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+//headers
+h1 {
+  font-weight: 700;
+  font-size: 2.625rem;
+  letter-spacing: 1.5px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1.5px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.625rem;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 1.375rem;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+//z-index
+.zindex-1 {
+  z-index: 1;
+}
+
+.zindex-10 {
+  z-index: 10;
+}
+
+.zindex-100 {
+  z-index: 100;
+}
+
+.zindex-1000 {
+  z-index: 1000;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.input-error-text {
+  color: $input-border-error;
+  font-size: 0.8rem;
+}
+
+.input-info-text {
+  @include regular-font;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  padding-inline: 15px;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.red {
+  color: $input-border-error;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
+//margins
+.m-auto {
+  margin: auto;
+}
+.mx-auto {
+  margin-inline: auto;
+}
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+.marginb-3 {
+  margin-bottom: 3rem;
+}
+//opacity
+.opacity-1 {
+  opacity: 1;
+}
+.opacity-09 {
+  opacity: 0.9;
+}
+.opacity-08 {
+  opacity: 0.8;
+}
+.opacity-07 {
+  opacity: 0.7;
+}
+.opacity-06 {
+  opacity: 0.6;
+}
+.opacity-05 {
+  opacity: 0.5;
+}
+.opacity-04 {
+  opacity: 0.4;
+}
+.opacity-03 {
+  opacity: 0.3;
+}
+.opacity-02 {
+  opacity: 0.2;
+}
+.opacity-01 {
+  opacity: 0.1;
+}
+
+.row-divider {
+  width: 100%;
+  height: 1px;
+  margin-top: 2rem;
+  background-color: $lightgrey;
+  opacity: 0.5;
+}
+
+.with-shadow {
+  box-shadow: 0px 5px 10px #0000001f;
+}
+
+//main colors
+.green {
+  color: $green !important;
+}
+
+.purple {
+  color: $purple !important;
+}
+
+.red {
+  color: $red !important;
+}
+
+.yellow {
+  color: $yellow !important;
+}
+
+.blue {
+  color: $blue !important;
+}
+
+.red2 {
+  color: #de350b !important;
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.font-14 {
+  font-size: 0.875rem;
+}
+
+.fweight-600 {
+  font-weight: 600;
+}
+
+.aleft {
+  text-align: left;
+}
+
+.box-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//for sidenavigation
+.marginLeft {
+  margin-left: 70px;
+}
+
+@include laptop-max {
+  html {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,24 @@
+@import '../../assets/styles/mixins.scss';
+
+.loginroute-page-wrapper {
+  .hexagon-col {
+    width: 55vw;
+  }
+
+  .routes-col {
+    // width: 45vw;
+    width: 100vw;
+    position: relative;
+  }
+}
+
+@include mobile {
+  .loginroute-page-wrapper {
+    flex-direction: column;
+
+    .routes-col,
+    .hexagon-col {
+      width: 100%;
+    }
+  }
+}

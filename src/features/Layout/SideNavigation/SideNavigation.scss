@@ -1,0 +1,326 @@
+@import '../../../assets/styles/mixins.scss';
+
+$menu-text: #5e6c84;
+$hover-active-bg: #4f9696;
+
+.nav-container {
+  position: fixed;
+  top: $navbar-height;
+  z-index: 1040;
+  width: $sidebar-width;
+  height: calc(100vh - $navbar-height);
+  margin-left: $sidebar-iconview-width;
+  padding: 5px 5px 5rem 5px;
+  overflow: visible;
+  background-color: $green;
+  box-shadow: $shadow;
+  transition: 500ms ease-in-out;
+
+  @include styled-scrollbar;
+
+  &.nav-sidemenu-visible {
+    margin-left: -0.7px;
+  }
+
+  .toggle-icon-wrapper {
+    top: -1rem;
+    right: -2rem;
+
+    .icon.icon-hexagon {
+      color: $white;
+      font-size: 2rem;
+      text-shadow: 0px 3px 6px #0000007a;
+    }
+
+    img {
+      width: 15px;
+
+      &.chev-hue {
+        transform: rotate(-90deg);
+      }
+
+      &.chev-vib {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .tr-subsite-row {
+    align-items: center;
+    padding: 1.25rem 1rem 1rem 1.5rem;
+    @include ellipsis-wrap;
+
+    .hexagon-wrapper.hex-icon-small {
+      i.icon-hexagon {
+        font-size: 2.5rem;
+      }
+    }
+
+    span {
+      display: block;
+      margin-top: 10%;
+      color: $white;
+      font: normal normal bold 10px/12px Tekton Pro;
+      @include medium-font;
+    }
+  }
+
+  .row-divider {
+    margin-top: 0.5rem;
+    background-color: $green-l3;
+    opacity: 0.5;
+  }
+
+  .nav-menu-row {
+    // padding: 1rem 0rem 1rem 0rem;
+
+    ul {
+      li a {
+        @include ellipsis-wrap;
+        // display: flex;
+        // flex-direction: row;
+        align-items: center;
+        padding: 0.7rem 1.5rem;
+        color: $white;
+        font-weight: 400;
+        font-size: 1rem;
+        border-radius: 4px;
+
+        span {
+          display: block;
+          width: 68px;
+          margin-top: 10%;
+          font: normal normal bold 10px/12px Tekton Pro;
+          white-space: normal;
+          overflow-wrap: break-word;
+        }
+      }
+
+      li a.sidemenu-unselected {
+        span {
+          color: $white;
+        }
+
+        .inner-icon {
+          align-items: center;
+          margin-top: 0px;
+          color: $green !important;
+        }
+
+        .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-1 {
+          color: $white;
+        }
+
+        // .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-2 {
+        //   color: $green-l1;
+        //   // margin-top: 0.8px;
+        //   // margin-right: 0.3px;
+        //   position: absolute;
+        // }
+
+        // .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-3 {
+        //   color: $green-l1;
+        // }
+
+        &:hover {
+          background-color: $white !important;
+
+          span {
+            color: $green;
+          }
+
+          .inner-icon {
+            align-items: center;
+            margin-top: 0px;
+            color: $white !important;
+          }
+
+          .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-1 {
+            color: $green-l1;
+          }
+
+          .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-2 {
+            position: absolute;
+            color: $green;
+          }
+
+          .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-3 {
+            color: $green-l1;
+          }
+        }
+      }
+
+      li a.sidemenu-selected {
+        background-color: $white !important;
+
+        span {
+          color: $green;
+        }
+
+        .inner-icon {
+          z-index: 1900;
+          align-items: center;
+          margin-top: 0px;
+          color: $white !important;
+        }
+
+        .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-1 {
+          color: $green;
+          font-size: 29.4px;
+        }
+
+        .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-2 {
+          z-index: 1900;
+          color: $green-l1;
+        }
+
+        .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-3 {
+          color: $green;
+        }
+      }
+
+      i.collapse-menu-icon {
+        position: absolute;
+        right: 10px;
+        color: $menu-text;
+        font-size: 1.2rem;
+      }
+    }
+
+    // .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-1 {
+    //   color: $white;
+    // }
+
+    // .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-2 {
+    //   color: $red;
+    // }
+
+    // .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-3 {
+    //   color: $yellow;
+    // }
+
+    .icon.inner-icon {
+      align-items: center;
+      margin-top: 0px;
+      color: $green;
+      font-size: 0.9rem;
+    }
+
+    div.inner-icon {
+      align-items: center;
+      margin-top: 0px;
+      color: $green !important;
+      font: normal normal bold 10px/12px Montserrat;
+    }
+
+    .sub-menu {
+      padding-top: 10px;
+
+      .vertical-divider {
+        display: flex;
+        justify-content: flex-end;
+        width: 4rem;
+        padding-right: 15px;
+
+        div {
+          width: 1px;
+          height: 100%;
+          background-color: $green-l2;
+        }
+      }
+
+      ul {
+        li a {
+          position: relative;
+
+          &.sidemenu-selected {
+            background-color: $white;
+            // border-radius: 8px;
+          }
+        }
+
+        span {
+          display: block;
+          margin-top: 10%;
+          font: normal normal bold 10px/12px Tekton Pro;
+        }
+      }
+    }
+  }
+
+  &.nav-sidemenu-icon-view {
+    // width: 100%;
+    width: $sidebar-iconview-width;
+
+    .tr-subsite-row,
+    .nav-menu-row ul li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10%;
+      text-decoration: none;
+
+      .hexIcon {
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        // margin-top: 3%;
+
+        span {
+          display: block;
+          margin-top: 10%;
+          font: normal normal bold 10px/12px Tekton Pro;
+        }
+      }
+      .hexIcon_logout {
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+
+        span {
+          color: $white;
+        }
+
+        .inner-icon {
+          align-items: center;
+          margin-top: 0px;
+          color: $green !important;
+        }
+
+        .hexagon-wrapper.hex-outlined i.icon-hexagon.hex-1 {
+          color: $white;
+        }
+
+        span {
+          display: block;
+          margin-top: 10%;
+          color: $white;
+          font: normal normal bold 10px/12px Tekton Pro;
+        }
+      }
+    }
+  }
+
+  .count-circle {
+    @include bold-font;
+    position: absolute;
+    right: 10px;
+    width: 30px;
+    height: 29px;
+    color: $white;
+    background-color: $red;
+    border-radius: 50%;
+  }
+}
+
+// @include laptop-max {
+//   aside {
+//     top: $navbar-height-laptop * 2;
+//     min-height: calc(100vh - $navbar-height-laptop * 2);
+
+//     &.subsite-head-hidden {
+//       top: $navbar-height-laptop;
+//       min-height: calc(100vh - $navbar-height-laptop);
+//     }
+//   }
+// }

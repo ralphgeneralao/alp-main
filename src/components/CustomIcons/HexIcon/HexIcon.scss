@@ -1,0 +1,223 @@
+@import '../../../assets/styles/mixins.scss';
+
+.hexagon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .inner-icon {
+    position: absolute;
+    z-index: 101;
+    color: $white;
+  }
+
+  .icon.inner-icon.icon-supervisor {
+    font-size: 0.9rem;
+  }
+
+  div.inner-icon {
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .icon-hexagon.hex-2,
+  .icon-hexagon.hex-3 {
+    position: absolute;
+    display: none;
+  }
+
+  //Outlined
+  &.hex-outlined {
+    .inner-icon {
+      color: $white;
+    }
+
+    i.icon-hexagon.hex-1 {
+      font-size: 29.4px;
+    }
+
+    i.icon-hexagon.hex-2 {
+      font-size: 27.3px;
+    }
+
+    i.icon-hexagon.hex-3 {
+      color: $white;
+      font-size: 23.1px;
+    }
+  }
+
+  &.hex-icon-green.hex-outlined {
+    i.icon-hexagon.hex-1 {
+      color: $green-l1;
+    }
+
+    i.icon-hexagon.hex-2 {
+      color: $green;
+    }
+  }
+
+  &.hex-icon-blue.hex-outlined {
+    i.icon-hexagon.hex-1 {
+      color: $blue-l1;
+    }
+
+    i.icon-hexagon.hex-2 {
+      color: $blue;
+    }
+  }
+
+  &.hex-icon-red.hex-outlined {
+    i.icon-hexagon.hex-1 {
+      color: $red-l1;
+    }
+
+    i.icon-hexagon.hex-2 {
+      color: $red;
+    }
+  }
+
+  //Faded mode
+  &.hex-icon-green.hex-faded {
+    i.icon-hexagon {
+      color: $green-l3;
+    }
+
+    .inner-icon {
+      color: $green;
+    }
+  }
+
+  &.hex-icon-red.hex-faded {
+    i.icon-hexagon {
+      color: $red-l3;
+    }
+
+    .inner-icon {
+      color: $red;
+    }
+  }
+
+  &.hex-icon-blue.hex-faded {
+    i.icon-hexagon {
+      color: $blue-l3;
+    }
+
+    .inner-icon {
+      color: $blue;
+    }
+  }
+
+  &.hex-icon-purple.hex-faded {
+    i.icon-hexagon {
+      color: $purple-l3;
+    }
+
+    .inner-icon {
+      color: $purple;
+    }
+  }
+
+  &.hex-icon-yellow.hex-faded {
+    i.icon-hexagon {
+      color: $yellow-l3;
+    }
+
+    .inner-icon {
+      color: $yellow;
+    }
+  }
+
+  //FILL MODE
+  .hex-fill {
+    .inner-icon {
+      color: $white;
+    }
+  }
+
+  &.hex-icon-green.hex-fill {
+    i.icon-hexagon {
+      color: $green;
+    }
+  }
+
+  &.hex-icon-red.hex-fill {
+    i.icon-hexagon {
+      color: $red;
+    }
+  }
+
+  &.hex-icon-blue.hex-fill {
+    i.icon-hexagon {
+      color: $blue;
+    }
+  }
+
+  &.hex-icon-purple.hex-fill {
+    i.icon-hexagon {
+      color: $purple;
+    }
+  }
+
+  &.hex-icon-yellow.hex-fill {
+    i.icon-hexagon {
+      color: $yellow;
+    }
+  }
+
+  //SIZE
+  &.hex-icon-small {
+    i.icon-hexagon {
+      font-size: 2rem;
+    }
+
+    i.inner-icon {
+      font-size: 1.1rem;
+    }
+  }
+
+  &.hex-icon-regular {
+    i.icon-hexagon {
+      font-size: 3.5rem;
+    }
+
+    i.inner-icon {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.sidemenu-selected {
+  .hexagon-wrapper {
+    .icon-hexagon.hex-1 {
+      color: $white !important;
+    }
+    .icon-hexagon.hex-2,
+    .icon-hexagon.hex-3 {
+      display: block;
+    }
+  }
+}
+//icon alignments changes when browser is zoomed
+@include desktop {
+  .sidemenu-selected {
+    .hexagon-wrapper {
+      .inner-icon {
+        position: fixed;
+        font-size: 12px;
+      }
+
+      i.icon-hexagon.hex-2 {
+        position: absolute;
+        top: 2px;
+        font-size: 26px;
+      }
+
+      i.icon-hexagon.hex-3 {
+        position: absolute;
+        top: 4px;
+        font-size: 22px;
+      }
+    }
+  }
+}

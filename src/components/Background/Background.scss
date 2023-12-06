@@ -1,0 +1,295 @@
+@import '../../assets/styles/mixins.scss';
+
+.background-wrapper {
+  background-color: #f4f5f7;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0.5;
+  overflow: hidden;
+
+  i {
+    position: absolute;
+    &:nth-child(1) {
+      color: $green-l1;
+      transform: rotate(10deg);
+      font-size: 11rem;
+      top: 10px;
+      left: -30px;
+      opacity: 0.4;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(2) {
+      color: $purple-l2;
+      transform: rotate(20deg);
+      font-size: 8rem;
+      top: 20px;
+      left: 100px;
+      opacity: 0.5;
+      animation: shakeY 40s infinite;
+    }
+
+    //RIGHT
+    &:nth-child(3) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 50rem;
+      right: -130px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(4) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 44.5rem;
+      right: -30px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(5) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 46rem;
+      right: 50px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //LEFT
+    &:nth-child(6) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 100rem;
+      left: -90px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(7) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 94.5rem;
+      left: 50px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(8) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 96rem;
+      left: -100px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //RIGHT
+    &:nth-child(9) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 150rem;
+      right: -130px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(10) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 144.5rem;
+      right: -30px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(11) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 146rem;
+      right: 50px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //LEFT
+    &:nth-child(12) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 200rem;
+      left: -90px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(13) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 194.5rem;
+      left: 50px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(14) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 196rem;
+      left: -100px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //RIGHT
+    &:nth-child(15) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 250rem;
+      right: -130px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(16) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 244.5rem;
+      right: -30px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(17) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 246rem;
+      right: 50px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //LEFT
+    &:nth-child(18) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 300rem;
+      left: -90px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(19) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 294.5rem;
+      left: 50px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(20) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 296rem;
+      left: -100px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //RIGHT
+    &:nth-child(21) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 350rem;
+      right: -130px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(22) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 344.5rem;
+      right: -30px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(23) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 346rem;
+      right: 50px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //LEFT
+    &:nth-child(24) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      top: 400rem;
+      left: -90px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(25) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      top: 394.5rem;
+      left: 50px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(26) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      top: 396rem;
+      left: -100px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+
+    //RIGHT
+    &:nth-child(27) {
+      color: $green-l2;
+      transform: rotate(20deg);
+      font-size: 15rem;
+      bottom: 20px;
+      right: -130px;
+      opacity: 0.6;
+      animation: shakeY 45s infinite;
+    }
+    &:nth-child(28) {
+      color: $blue-l1;
+      transform: rotate(10deg);
+      font-size: 5rem;
+      bottom: 270px;
+      right: -30px;
+      opacity: 0.3;
+      animation: shakeY 35s infinite;
+    }
+    &:nth-child(29) {
+      color: $purple-l2;
+      transform: rotate(30deg);
+      font-size: 9rem;
+      bottom: 150px;
+      right: 50px;
+      opacity: 0.4;
+      animation: shakeY 25s infinite;
+    }
+  }
+}

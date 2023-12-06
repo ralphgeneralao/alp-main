@@ -1,0 +1,292 @@
+@import '../../../assets/styles/mixins.scss';
+
+.personalaccount-page-wrapper {
+  width: 100%;
+  height: 97%;
+  display: grid;
+  padding: 0 4rem 4rem 4rem;
+  top: -2rem;
+  margin: 0 auto;
+
+  .logo-no-text {
+    img {
+      height: 190px;
+    }
+  }
+
+  .personalaccount-page-content {
+    width: 655px;
+    position: relative;
+    margin: 0 auto;
+
+    .personalaccount-header {
+      margin-block: 4rem 0rem;
+
+      .h3-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        h3 {
+          font-size: 20px;
+          opacity: 1;
+          font-weight: bold;
+          color: $black;
+          letter-spacing: 0.8px;
+        }
+      }
+
+      .selection-desc {
+        font-size: 10px;
+        font-weight: 600;
+        text-align: left;
+        color: $black;
+        margin-left: 0.5%;
+
+        a {
+          color: $green-d1;
+
+          &:hover {
+            color: $green-d1;
+            opacity: 1;
+          }
+        }
+
+        p {
+          @include regular-font;
+          opacity: 0.6;
+          color: $black;
+        }
+      }
+    }
+
+    .personalaccount-form {
+      margin-bottom: 10rem;
+      margin-top: 4rem;
+
+      .h6-wrapper {
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 98%;
+        margin-bottom: 0.5rem;
+
+        h6 {
+          font-size: 1rem;
+          margin-bottom: 0;
+          color: $black;
+          opacity: 0.87;
+        }
+
+        p {
+          text-align: left;
+        }
+      }
+
+      .alp-form {
+        width: 420px;
+        position: relative;
+        margin: 0 auto;
+        input {
+          color: $green;
+          // border: 1px solid $green-l1 !important;
+          border-color: $green-l1;
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+          &::placeholder {
+            color: $green-l1;
+            border-color: 1px solid $green-l1 !important;
+          }
+
+          &:focus,
+          &:active {
+            // border: 1px solid $green-l1 !important;
+            box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.2);
+          }
+
+          // &.form-check-input {
+          //   border: 1px solid $input-border-focus !important;
+          //   border-radius: 4px;
+          // }
+        }
+
+        label.form-label {
+          span.red {
+            margin-right: 0.3rem;
+            color: #c0452b !important;
+          }
+        }
+
+        select {
+          color: $green;
+          border-color: $green-l1;
+          box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+
+          &:focus,
+          &:active {
+            background-color: $green-l3;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+          }
+        }
+
+        input[type='checkbox'] {
+          background-color: $white;
+          box-shadow: none;
+        }
+
+        input[type='checkbox']:checked {
+          background-color: $green;
+
+          &:focus {
+            background-color: none !important;
+          }
+        }
+
+        .background-green {
+          background-color: $green-l3 !important;
+        }
+
+        .text-capitalize {
+          color: $green;
+        }
+
+        .option-first-color {
+          color: $green-l2;
+        }
+
+        .font-12 {
+          font-size: 12px !important;
+        }
+
+        .p-bottom {
+          margin-top: 1rem;
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+
+        .form-select {
+          background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27none%27 stroke=%27%232b8080%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%273%27 d=%27m2 5 6 6 6-6%27/%3e%3c/svg%3e');
+        }
+
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          box-shadow: 0 0 0 30px $green-l3 inset !important;
+          -webkit-text-fill-color: $green;
+        }
+
+        .grid-agreement {
+          display: grid;
+          grid-template-columns: 120px auto;
+          float: right;
+          margin-top: 1rem;
+          margin-bottom: 0.5rem;
+          padding-top: 2rem;
+          border-top: 2px solid #2b808080;
+
+          .agreement-row {
+            gap: 0.3rem;
+
+            span {
+              font-size: 0.8rem;
+            }
+          }
+
+          img {
+            height: 104px;
+            width: 104px;
+            border-radius: 50%;
+          }
+        }
+
+        .submit-btn-row {
+          padding-bottom: 1rem;
+          display: inline-block;
+        }
+
+        .password-wrapper {
+          input {
+            padding-right: 45px;
+          }
+        }
+      }
+
+      .gender-row {
+        gap: 1.5rem;
+        color: rgba($dark, 0.8);
+        margin-bottom: 0.5rem;
+
+        input {
+          margin-right: -1rem;
+        }
+      }
+
+      .birthdate-row {
+        gap: 1.5rem;
+
+        .bdate-col {
+          width: 60%;
+        }
+
+        .age-col {
+          width: 40%;
+        }
+
+        .dateofbirth-radio {
+          @include regular-font;
+          gap: 0.8rem;
+          color: rgba($dark, 0.8);
+          font-size: 0.8rem;
+          display: flex;
+          align-items: flex-end;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      .submit-btn-row {
+        margin-top: 1rem;
+        text-align: center;
+
+        p {
+          margin-top: 0.5rem;
+          font-size: 0.8rem;
+          text-align: left;
+        }
+      }
+
+      .row-divider {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .warning-prompt {
+        margin-bottom: 0;
+
+        .warning-prompt-header {
+          color: #a38668;
+          font-size: 1.1rem;
+        }
+
+        a {
+          color: $yellow-d2;
+        }
+      }
+
+      .agreement-error {
+        border: 2px $input-border-error solid;
+      }
+    }
+
+    a {
+      color: $green-d1;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

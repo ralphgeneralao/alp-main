@@ -1,0 +1,235 @@
+@import '../../../assets/styles/mixins.scss';
+
+header.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 1042;
+  width: 100%;
+  font-size: 1rem;
+  font-family: $font-montserrat;
+  background-color: $white;
+
+  .navigation-row {
+    width: 100%;
+    height: $navbar-height;
+    border-bottom: 1px solid rgba($lightgrey, 0.5);
+
+    &.dropdown-closed {
+      border-bottom: 1px solid transparent;
+    }
+
+    nav {
+      justify-content: space-between;
+      height: 100%;
+      margin-inline: 87.5px;
+
+      .brand-col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 52px;
+
+        img {
+          height: 36px;
+        }
+      }
+
+      .menu-col {
+        gap: 2rem;
+        align-items: center;
+        margin: 0px;
+        padding: 0px;
+
+        li {
+          position: relative;
+          display: block;
+
+          div.selected-underline {
+            position: absolute;
+            top: 30px;
+            display: none;
+            width: 100%;
+            height: 4px;
+            background-color: #2b8080;
+            border-radius: 8px;
+          }
+
+          .menu-selected {
+            color: $green;
+
+            div.selected-underline {
+              display: block;
+            }
+          }
+        }
+      }
+
+      .buttons-col {
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+
+        .login-btn {
+          color: $green;
+
+          &:hover {
+            color: $green-l1;
+          }
+        }
+
+        .divider {
+          width: 1px;
+          height: 50%;
+          background-color: $lightgrey;
+          opacity: 0.5;
+        }
+
+        i {
+          margin-right: 10px;
+        }
+
+        .activate-color {
+          color: $lightgrey;
+          font-weight: 400;
+          font-size: 0.875rem;
+          &:hover {
+            color: $green-l1;
+          }
+        }
+      }
+    }
+  }
+
+  button.member-btn {
+    color: $white;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: $green;
+    border: 1px solid $green;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+    &:hover,
+    &:active {
+      color: $green;
+      background-color: $green-l3;
+    }
+  }
+
+  button.register-btn {
+    color: $green;
+    background-color: $green-l3;
+    border: 1px solid $green;
+
+    &:hover,
+    &:active {
+      color: $white;
+      background-color: $green;
+    }
+  }
+
+  button.activate-btn {
+    color: #a5adba;
+  }
+
+  a,
+  .btn,
+  .main-menu-dropdownmenu {
+    @include regular-font;
+    display: flex;
+    align-items: center;
+    color: $dark;
+    font-weight: 400;
+    font-size: 0.875rem;
+    text-decoration: none;
+    cursor: pointer;
+
+    i.icon.nav-dropdown-icon {
+      margin-left: 0.3rem;
+      font-size: 1.6rem;
+      // color: #999ca0;
+    }
+
+    &:hover {
+      color: $green-l1;
+    }
+
+    .dropdown-menu {
+      position: fixed !important;
+      transform: translate(0px, 50px) !important;
+      inset: initial !important;
+    }
+
+    .dropdown-toggle.up-caret::after {
+      rotate: 180deg;
+    }
+
+    button {
+      font-size: 0.875rem;
+      background-color: transparent;
+      border: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.subsite-row {
+  position: fixed;
+  z-index: 1041;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: $navbar-height;
+  margin-top: 4px;
+  background-color: $white;
+  border-bottom: 4px solid;
+  border-image: linear-gradient(
+      to right,
+      $green-l1 20%,
+      $blue-l1 20%,
+      $blue-l1 40%,
+      $purple-l1 40%,
+      $purple-l1 60%,
+      $red-l1 60%,
+      $red-l1 80%,
+      $yellow-l1 80%
+    )
+    5;
+  transition: 0.5s;
+
+  ul {
+    gap: 5vw;
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+  }
+
+  // &.show-subsites {
+  //   margin-top: $navbar-height;
+  // }
+}
+
+@include laptop-max {
+  // header.main-header {
+  //   .navigation-row {
+  //     height: $navbar-height-laptop;
+  //   }
+  // }
+
+  .subsite-row {
+    // height: $navbar-height-laptop;
+
+    ul {
+      gap: 3vw;
+    }
+  }
+}

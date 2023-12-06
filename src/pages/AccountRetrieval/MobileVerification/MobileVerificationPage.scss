@@ -1,0 +1,124 @@
+@import '../../../assets/styles/mixins.scss';
+
+.mobile-verification-page-wrapper {
+  width: 100%;
+  height: 98%;
+  display: grid;
+  padding: 0 4rem 4rem 4rem;
+  top: -2rem;
+
+  .logo-no-text {
+    z-index: 1;
+    margin-bottom: 1.5rem;
+
+    img {
+      height: 190px;
+    }
+  }
+
+  .mobile-verification-page-content {
+    width: 425px;
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+    min-height: 520px;
+
+    .otp-form-wrapper {
+      width: 100%;
+      margin-top: 2.5rem;
+
+      .otp-input-row {
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+
+        input {
+          width: 16%;
+          height: 3.5rem;
+          text-align: center;
+        }
+      }
+
+      .resend-otp-row {
+        justify-content: space-between;
+        font-size: 0.75rem;
+      }
+
+      .resend-otp {
+        width: 100px;
+        text-align: left;
+
+        button {
+          @include semibold-font;
+          color: $green;
+          border: 0;
+          background-color: transparent;
+          padding: 0px;
+          font-size: 0.75rem;
+
+          &:hover {
+            opacity: 0.8;
+          }
+
+          &.disabled {
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .submit-btn-row {
+        margin-top: 3rem;
+        text-align: center;
+      }
+    }
+
+    .mobile-verification-text {
+      margin-bottom: 0;
+      font-size: 0.9rem;
+    }
+
+    .mobile-verification-footer {
+      text-align: center;
+      padding: 1rem 0rem;
+      padding: 0rem 0rem 1rem 0rem;
+      font-size: 0.9rem;
+    }
+    a {
+      color: $green-d1;
+      padding: 0rem 0rem 1rem 0rem;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    button.password-back-to-login-btn {
+      background-color: $green-d1;
+      color: $white;
+      border-radius: 4px;
+      border: 0px;
+      width: 100%;
+      &:hover,
+      &:active {
+        background-color: $green;
+        color: $white;
+      }
+    }
+
+    .mobile-verification-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 1rem;
+
+      h3 {
+        font-size: 1.5rem;
+        opacity: 0.85;
+        margin-bottom: 1rem;
+      }
+
+      // p {
+      //   opacity: 0.8;
+      // }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@import '../../../assets/styles/mixins.scss';
+
+.license-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  min-height: 110px;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  padding-left: 1.6rem;
+  padding-right: 1.5rem;
+  border-left: 4px solid;
+  box-shadow: 0px 1px 2px #0000001f;
+  border-radius: 4px;
+  background-color: #fafbfc;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f3f3f3;
+  }
+
+  .license-card-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .card-text {
+      width: 80%;
+
+      .license-badge {
+        margin-bottom: 5px;
+      }
+
+      h6 {
+        @include semibold-font;
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .account-type {
+        @include bold-font;
+        font-size: 0.875rem;
+        opacity: 0.8;
+        margin-bottom: 5px;
+      }
+
+      p {
+        @include regular-font;
+        opacity: 0.6;
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .card-hex-icon {
+      width: 20%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+
+  .license-card-footer {
+    @include regular-font;
+    width: 100%;
+    opacity: 0.6;
+    padding: 1rem 0rem 0rem 0rem;
+    font-size: 0.875rem;
+    border-top: 1px solid rgba($lightgrey, 0.3);
+
+    span {
+      @include medium-font;
+    }
+  }
+
+  &.green-card {
+    border-color: $green;
+
+    .license-card-info {
+      .card-text {
+        .account-type {
+          color: $green;
+        }
+      }
+    }
+
+    .license-card-footer span {
+      color: $green;
+    }
+  }
+
+  &.red-card {
+    border-color: $red;
+
+    .card-text {
+      .account-type {
+        color: $red;
+      }
+    }
+
+    .license-card-footer span {
+      color: $red;
+    }
+  }
+
+  &.blue-card {
+    border-color: $blue-d1;
+
+    .card-text {
+      .account-type {
+        color: $blue-d1;
+      }
+    }
+
+    .license-card-footer span {
+      color: $blue-d1;
+    }
+  }
+
+  &.purple-card {
+    border-color: $purple;
+
+    .card-text {
+      .account-type {
+        color: $purple;
+      }
+    }
+
+    .license-card-footer span {
+      color: $purple;
+    }
+  }
+
+  &.yellow-card {
+    border-color: $yellow-d1;
+
+    .card-text {
+      .account-type {
+        color: $yellow-d1;
+      }
+    }
+
+    .license-card-footer span {
+      color: $yellow-d1;
+    }
+  }
+}

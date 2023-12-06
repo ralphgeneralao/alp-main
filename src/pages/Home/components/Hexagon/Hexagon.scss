@@ -1,0 +1,19 @@
+/* Define different colors for each side using CSS classes */
+.hexagon {
+  fill: red; /* Top side */
+}
+.hexagon.left-bottom {
+  fill: blue; /* Left bottom side */
+}
+.hexagon.right-bottom {
+  fill: green; /* Right bottom side */
+}
+.hexagon.right {
+  fill: yellow; /* Right side */
+}
+.hexagon.left {
+  fill: orange; /* Left side */
+}
+.hexagon.bottom {
+  fill: purple; /* Bottom side */
+}

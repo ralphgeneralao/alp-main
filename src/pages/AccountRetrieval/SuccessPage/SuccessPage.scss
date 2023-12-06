@@ -1,0 +1,45 @@
+@import '../../../assets/styles/mixins.scss';
+
+.license-selection-page-wrapper {
+  width: 100%;
+  height: 97%;
+  display: grid;
+  // padding: 4rem;
+  padding: 0 4rem 4rem 4rem;
+  top: -2rem;
+
+  .success-login-content {
+    width: 400px;
+    position: relative;
+    margin: 0 auto;
+
+    .logo-row {
+      text-align: center;
+
+      img {
+        height: 230px;
+      }
+    }
+
+    .success-text-row {
+      margin-top: 2.5rem;
+
+      h3 {
+        font-size: 20px;
+      }
+
+      .success-desc {
+        font-weight: 600;
+      }
+
+      a {
+        color: #2b8080;
+        font-size: 14px;
+      }
+
+      .goto-tr {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

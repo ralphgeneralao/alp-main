@@ -1,0 +1,156 @@
+//general colors (can be used anywhere)
+$white: #ffffff;
+$dark: #181818;
+$lightgrey: #a5adba;
+$black: #000000;
+
+//inputs
+$input-border: #dfe1e6;
+$input-border-error: #de350b;
+$input-border-focus: #2b8080;
+$input-border-disabled: #ebecf0;
+$input-bg-hover: #f4f5f7;
+$input-border-warning: #fcd4ac;
+$input-bg-focus: #e6f0f0;
+
+//general colors
+$green-l3: #e6f0f0;
+$green-l2: #96c0c0;
+$green-l1: #6ba6a6;
+$green: #2b8080;
+$green-d1: #006666;
+$green-d2: #004747;
+$green-d3: #003e3e;
+
+$purple-l3: #f2e6f2;
+$purple-l2: #c896c8;
+$purple-l1: #b26bb2;
+$purple: #912b91;
+$purple-d1: #7a007a;
+$purple-d2: #550055;
+$purple-d3: #4a004a;
+
+$blue-l3: #edeefc;
+$blue-l2: #b4b7f2;
+$blue-l1: #959aec;
+$blue: #4950df;
+$blue-d1: #4950df;
+$blue-d2: #33389c;
+$blue-d3: #2d3188;
+
+$red-l3: #f5e6eb;
+$red-l2: #d596ab;
+$red-l1: #c46b89;
+$red: #aa2b56;
+$red-d1: #990033;
+$red-d2: #6b0024;
+$red-d3: #5d001f;
+
+$yellow-l3: #fff8f1;
+$yellow-l2: #fde1c4;
+$yellow-l1: #fcd4ac;
+$yellow: #f89a3c;
+$yellow-d1: #fab570;
+$yellow-d2: #af7f4e;
+$yellow-d3: #996e44;
+
+//sizes
+$navbar-height: 75px;
+$navbar-height-laptop: 75px;
+// $navbar-height-laptop: 79px;
+// $sidebar-width: 300px;
+$sidebar-width: 70px; //adjusted
+$sidebar-iconview-width: 72px;
+$resourcefilter-width: 315px;
+
+//fonts
+$font-montserrat: 'Montserrat', sans-serif;
+
+//shadows
+$shadow: 0px 1px 2px #0000000f;
+$shadow-hover: 0px 10px 10px #0000000a;
+
+//no text logo for pages
+.logo-no-text {
+  text-align: center;
+  img {
+    height: 100px;
+  }
+}
+
+@mixin regular-font {
+  font-weight: 400;
+}
+
+@mixin medium-font {
+  font-weight: 500;
+}
+
+@mixin semibold-font {
+  font-weight: 600;
+}
+
+@mixin bold-font {
+  font-weight: bold;
+}
+
+@mixin ellipsis-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin styled-scrollbar {
+  &::-webkit-scrollbar-track {
+    width: 8px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    opacity: 0.5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    opacity: 0.5;
+  }
+}
+
+@mixin mobile {
+  //this handles mobile and tablet
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  //this handles laptops and pc
+  @media (min-width: 769px) and (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  //this handles desktops
+  @media (min-width: 1441px) {
+    @content;
+  }
+}
+
+@mixin laptop-min {
+  //laptop screen minimum
+  //all except mobile
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin laptop-max {
+  //this handles laptops and pc
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
